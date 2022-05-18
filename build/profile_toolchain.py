@@ -34,16 +34,10 @@ def calculate_hash(root):
         return CalculateHash('.', None)
 
 def windows_installed_software():
-    f = open('installed_software.json', 'r')
-    json_data = json.loads(f.read())
-
-    # Filter out missing keys
-    return list(
-        map(
-            lambda info: {k: info[k] for k in info if info[k]},
-            json.loads(json_data.group(1)),
-        )
-    )
+    # file_path = os.path.join(os.getcwd(), 'installed_software.json')
+    # return json.loads(open('installed_software.json').read().decode('utf-8'))
+    f = open('installed_software.json', encoding='utf-8-sig')
+    return json.load(f)
 
 
 def windows_profile():
