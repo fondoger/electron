@@ -7,8 +7,9 @@
 #endif
 #include "shell/browser/notifications/win/win32_desktop_notifications/toast.h"
 
-#include <UIAutomation.h>
 #include <combaseapi.h>
+
+#include <UIAutomation.h>
 #include <uxtheme.h>
 #include <windowsx.h>
 
