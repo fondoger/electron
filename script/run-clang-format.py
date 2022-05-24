@@ -186,6 +186,8 @@ def run_clang_format_diff(args, file):
         )
     if args.in_place:
         return [], errs
+    if sys.platform == 'win32':
+        file = file.replace(os.sep, posixpath.sep)
     return make_diff(file, original, outs), errs
 
 
